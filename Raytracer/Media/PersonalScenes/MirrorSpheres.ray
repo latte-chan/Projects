@@ -1,0 +1,96 @@
+# author: Aidan
+
+Background {
+	# Color of the background 
+	color 0.0 0.0 0.0 # blue-gray
+	# low intensity white light
+	ambientLight 1 1 1 
+}
+
+Camera {
+	eye -3 7 0
+	lookAt 5 0 0
+	up 0 0 1
+	fovy 45
+}
+Lights {
+    Light {
+		position 5 0 5
+		color 0.92 0.38 0.20
+	}
+}
+
+Materials {
+	Material {
+		textureFilename NULL
+		diffuseColor 0.5 0 0
+		specularColor 0.3 0.3 0.3
+		reflectiveColor 0.3 0.3 0.3
+		shininess 100
+		transparentColor 0 0 0 
+		indexOfRefraction 0.6
+	}
+	Material {
+		textureFilename NULL
+		diffuseColor 0.05 0.05 0.05
+		specularColor 0.3 0.3 0.3
+		reflectiveColor 1.0 1.0 1.0
+		shininess 30
+		transparentColor 0 0 0 
+		indexOfRefraction 0.6
+	}
+	Material {
+		textureFilename NULL
+		diffuseColor 0.0 0.5 0.0
+		specularColor 0.3 0.3 0.3
+		reflectiveColor 0.3 0.3 0.3
+		shininess 100
+		transparentColor 0 0 0 
+		indexOfRefraction 0.6
+	}
+	Material {
+		textureFilename NULL
+		diffuseColor 0 0 0.5
+		specularColor 0.3 0.3 0.3
+		reflectiveColor 0.0 0.0 0.0
+		shininess 50
+		transparentColor 0 0 0 
+		indexOfRefraction 0.6
+	}
+}
+
+Group {
+	Sphere {
+		materialIndex 1
+		center 7 -3 2
+		radius 3
+	}
+	Sphere {
+		materialIndex 0
+		center 5 4 -1
+		radius 1
+	}
+	Sphere {
+		materialIndex 2
+		center 3 -1 -3
+		radius 2
+	}
+	Triangle {
+		vertex0 0 -5 -3
+		vertex1 10 -5 -3
+		vertex2 0 5 -3
+		tex_xy_0 1 0
+		tex_xy_1 0 0
+		tex_xy_2 0 1
+		materialIndex 3
+	}
+	Triangle {
+		vertex0 10 5 -3
+		vertex1 0 5 -3
+		vertex2 10 -5 -3
+		tex_xy_0 1 0
+		tex_xy_1 0 0
+		tex_xy_2 0 1
+		materialIndex 3
+	}
+}

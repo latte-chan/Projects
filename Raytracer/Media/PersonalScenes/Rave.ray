@@ -1,0 +1,116 @@
+# author: Aidan
+
+Background {
+	# Color of the background 
+	color 0.0 0.0 0.0 # black
+	# low intensity white light
+	ambientLight 0.1 0.1 0.1
+}
+
+Camera {
+	eye -10 -10 10
+	lookAt 10 10 0
+	up 0 0 1
+	fovy 45
+}
+Lights {
+    Light {
+		position 0 0 30
+		color 0.8 0.0 0.0
+	}
+}
+
+Materials {
+	Material {
+		textureFilename NULL
+		diffuseColor 0.05 0.05 0.05
+		specularColor 1 1 1
+		reflectiveColor 1.0 1.0 1.0
+		shininess 30
+		transparentColor 0 0 0 
+		indexOfRefraction 0.6
+	}
+	Material {
+		textureFilename NULL
+		diffuseColor 0.3 0.3 0.3
+		specularColor 0.3 0.3 0.3
+		reflectiveColor 0.0 0.0 0.0
+		shininess 100
+		transparentColor 0 0 0 
+		indexOfRefraction 0.6
+	}
+	Material {
+		textureFilename NULL
+		diffuseColor 0.5 0.5 0.5
+		specularColor 0.3 0.3 0.3
+		reflectiveColor 0.0 0.0 0.0
+		shininess 100
+		transparentColor 0 0 0 
+		indexOfRefraction 0.6
+	}
+}
+
+Group {
+	Sphere {
+		materialIndex 0
+		center 0 0 5
+		radius 2
+	}
+	#-----------------
+	Triangle {
+		vertex0 -10 10 0
+		vertex1 -10 -10 0
+		vertex2 10 10 0
+		tex_xy_0 1 0`
+		tex_xy_1 0 0
+		tex_xy_2 0 1
+		materialIndex 2
+	}
+	Triangle {
+		vertex0 10 -10 0
+		vertex1 10 10 0
+		vertex2 -10 -10 0
+		tex_xy_0 1 0
+		tex_xy_1 0 0
+		tex_xy_2 0 1
+		materialIndex 2
+	}
+	#-----------------
+	Triangle {
+		vertex0 10 10 10
+		vertex1 -10 10 10
+		vertex2 10 10 0
+		tex_xy_0 1 0
+		tex_xy_1 0 0
+		tex_xy_2 0 1
+		materialIndex 1
+	}
+	Triangle {
+		vertex0 -10 10 0
+		vertex1 10 10 0
+		vertex2 -10 10 10
+		tex_xy_0 1 0
+		tex_xy_1 0 0
+		tex_xy_2 0 1
+		materialIndex 1
+	}
+	#-----------------
+	Triangle {
+		vertex0 10 -10 10
+		vertex1 10 10 10
+		vertex2 10 -10 0
+		tex_xy_0 1 0
+		tex_xy_1 0 0
+		tex_xy_2 0 1
+		materialIndex 1
+	}
+	Triangle {
+		vertex0 10 10 0
+		vertex1 10 -10 0
+		vertex2 10 10 10
+		tex_xy_0 1 0
+		tex_xy_1 0 0
+		tex_xy_2 0 1
+		materialIndex 1
+	}
+}
