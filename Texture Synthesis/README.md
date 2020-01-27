@@ -1,3 +1,5 @@
+All code in this folder was written by me
+
 Files included:
 Project 4 main.py
 Project 4 texture.jpg
